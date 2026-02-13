@@ -9,6 +9,12 @@
 <body>
     <div class="container">
         <header class="header">
+            <div class="theme-toggle-container" aria-label="Theme">
+                <label class="theme-switch">
+                    <input id="theme-toggle" type="checkbox" aria-label="Toggle dark mode">
+                    <span class="theme-slider"></span>
+                </label>
+            </div>
             <h1>ORCA Application Portfolio</h1>
             <p class="subtitle">Comprehensive Application Information Hub</p>
         </header>
@@ -23,23 +29,19 @@
                 <div class="section-content">
                     <div class="info-row">
                         <span class="label">Application Name:</span>
-                        <span class="value">ORCA</span>
+                        <span class="value">ORCA - Ordering Cloud Application</span>
                     </div>
                     <div class="info-row">
-                        <span class="label">Version:</span>
-                        <span class="value editable" contenteditable="true">1.0.0</span>
+                        <span class="label">Application URL:</span>
+                        <a href="#" class="value link">https://orca.foods.apps.mnscorp.net</a>
                     </div>
                     <div class="info-row">
-                        <span class="label">Environment:</span>
-                        <span class="value editable" contenteditable="true">Production</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Status:</span>
-                        <span class="value status-active">Active</span>
+                        <span class="label">Contact Email:</span>
+                        <a href="mailto:ORCADevops@marks-and-spencer.com" class="value link">ORCADevops@marks-and-spencer.com</a>
                     </div>
                     <div class="info-row">
                         <span class="label">Description:</span>
-                        <span class="value editable" contenteditable="true">ORCA is a comprehensive application platform providing various services and monitoring capabilities.</span>
+                        <span class="value">ORCA is used to orchestrate all instances/use cases for "fixed orders". Fixed orders are created in ORCA to tell FOA system about store-level order. Fixed orders are created both through ORCA interfaces with channels (ie. interface with Sterling for FTO orders), as well as directly by users who create fixed orders in the ORCA UI.</span>
                     </div>
                 </div>
             </section>
@@ -48,23 +50,19 @@
             <section class="card" id="services-details">
                 <h2 class="section-title">
                     <span class="icon">⚙️</span>
-                    Services Details
+                    Service Details
                 </h2>
                 <div class="section-content">
                     <div class="services-subsection">
                         <h3 class="subsection-title">UI Services</h3>
                         <div class="service-list">
                             <div class="service-item">
-                                <span class="service-name editable" contenteditable="true">ORCA Web Portal</span>
-                                <span class="service-status status-active">Running</span>
+                                <span class="service-name">ORCA Web UI</span>
+                                <button type="button" class="service-status status-active copy-url" data-url="https://orca.foods.apps.mnscorp.net">Copy URL</button>
                             </div>
                             <div class="service-item">
-                                <span class="service-name editable" contenteditable="true">Admin Dashboard</span>
-                                <span class="service-status status-active">Running</span>
-                            </div>
-                            <div class="service-item">
-                                <span class="service-name editable" contenteditable="true">User Interface Service</span>
-                                <span class="service-status status-active">Running</span>
+                                <span class="service-name">ORCA Support UI</span>
+                                <button type="button" class="service-status status-active copy-url" data-url="https://orca-supportui.foods.apps.mnscorp.net">Copy URL</button>
                             </div>
                         </div>
                     </div>
@@ -72,20 +70,28 @@
                         <h3 class="subsection-title">Backend Services</h3>
                         <div class="service-list">
                             <div class="service-item">
-                                <span class="service-name editable" contenteditable="true">API Gateway</span>
-                                <span class="service-status status-active">Running</span>
+                                <span class="service-name">ORCA Channelorder Service</span>
+                                <button type="button" class="service-status status-active copy-url" data-url="https://orca.foods.apps.mnscorp.net">Copy Swagger URL</button>
                             </div>
                             <div class="service-item">
-                                <span class="service-name editable" contenteditable="true">Authentication Service</span>
-                                <span class="service-status status-active">Running</span>
+                                <span class="service-name">ORCA Orderrecon Service</span>
+                                <button type="button" class="service-status status-active copy-url" data-url="https://orca.foods.apps.mnscorp.net">Copy Swagger URL</button>
                             </div>
                             <div class="service-item">
-                                <span class="service-name editable" contenteditable="true">Data Processing Service</span>
-                                <span class="service-status status-active">Running</span>
+                                <span class="service-name">ORCA Custorderreport Service</span>
+                                <button type="button" class="service-status status-active copy-url" data-url="https://orca.foods.apps.mnscorp.net">Copy Swagger URL</button>
                             </div>
                             <div class="service-item">
-                                <span class="service-name editable" contenteditable="true">Database Service</span>
-                                <span class="service-status status-active">Running</span>
+                                <span class="service-name">ORCA Scrd Service</span>
+                                <button type="button" class="service-status status-active copy-url" data-url="https://orca.foods.apps.mnscorp.net">Copy Swagger URL</button>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-name">ORCA Bulkupload Service</span>
+                                <button type="button" class="service-status status-active copy-url" data-url="https://orca.foods.apps.mnscorp.net">Copy Swagger URL</button>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-name">ORCA Inboundorder Service</span>
+                                <button type="button" class="service-status status-active copy-url" data-url="https://orca.foods.apps.mnscorp.net">Copy Swagger URL</button>
                             </div>
                         </div>
                     </div>
@@ -100,20 +106,8 @@
                 </h2>
                 <div class="section-content">
                     <div class="info-row">
-                        <span class="label">PIM Portal:</span>
-                        <a href="#" class="value link editable" contenteditable="true">https://pim.example.com</a>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Request Type:</span>
-                        <span class="value editable" contenteditable="true">Privileged Access Management</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Access Level:</span>
-                        <span class="value editable" contenteditable="true">Administrator</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Approval Workflow:</span>
-                        <span class="value editable" contenteditable="true">Manager → Security Team → Auto-approval</span>
+                        <span class="label">Azure PIM URL:</span>
+                        <a href="#" class="value link">https://portal.azure.com/#view/Microsoft_Azure_PIMCommon/ActivationMenuBlade/~/azurerbac</a>
                     </div>
                 </div>
             </section>
@@ -126,20 +120,8 @@
                 </h2>
                 <div class="section-content">
                     <div class="info-row">
-                        <span class="label">Remedy Portal:</span>
-                        <a href="#" class="value link editable" contenteditable="true">https://remedy.example.com</a>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Service Request:</span>
-                        <a href="#" class="value link editable" contenteditable="true">https://remedy.example.com/servicerequest</a>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Incident Management:</span>
-                        <a href="#" class="value link editable" contenteditable="true">https://remedy.example.com/incident</a>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Change Management:</span>
-                        <a href="#" class="value link editable" contenteditable="true">https://remedy.example.com/change</a>
+                        <span class="label">Remedy URL:</span>
+                        <a href="#" class="value link">https://mnscorp-rod.onbmc.com/arsys/forms/onbmc-s/SHR%3ALandingConsole/Default+Administrator+View/?cacheid=c1312a26</a>
                     </div>
                 </div>
             </section>
@@ -152,24 +134,8 @@
                 </h2>
                 <div class="section-content">
                     <div class="info-row">
-                        <span class="label">Service ID:</span>
-                        <span class="value editable" contenteditable="true">PXXXXXX</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Integration Key:</span>
-                        <span class="value editable" contenteditable="true">********************************</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Escalation Policy:</span>
-                        <span class="value editable" contenteditable="true">ORCA-On-Call</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Service URL:</span>
-                        <a href="#" class="value link editable" contenteditable="true">https://pagerduty.com/services/PXXXXXX</a>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Alert Channels:</span>
-                        <span class="value editable" contenteditable="true">Email, SMS, Phone, Slack</span>
+                        <span class="label">PagerDuty Incidents URL:</span>
+                        <a href="#" class="value link">https://mands.pagerduty.com/incidents</a>
                     </div>
                 </div>
             </section>
@@ -182,24 +148,8 @@
                 </h2>
                 <div class="section-content">
                     <div class="info-row">
-                        <span class="label">Repository URL:</span>
-                        <a href="#" class="value link editable" contenteditable="true">https://github.com/ManzoorElahi22/orca-workspace</a>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Team Email:</span>
-                        <span class="value editable" contenteditable="true">orca-team@example.com</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Tech Lead:</span>
-                        <span class="value editable" contenteditable="true">John Doe</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Support Contact:</span>
-                        <span class="value editable" contenteditable="true">support@example.com</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label">Slack Channel:</span>
-                        <span class="value editable" contenteditable="true">#orca-support</span>
+                        <span class="label">Contact Repo URL:</span>
+                        <a href="#" class="value link">https://apps.powerapps.com/play/e/default-bd5c6713-7399-4b31-be79-78f2d078e543/a/ae6cf827-0024-4153-90ba-98154bd17b7f?tenantId=bd5c6713-7399-4b31-be79-78f2d078e543</a>
                     </div>
                 </div>
             </section>
@@ -212,36 +162,32 @@
                 </h2>
                 <div class="section-content">
                     <div class="info-row">
-                        <span class="label">Dashboard URL:</span>
-                        <a href="#" class="value link editable" contenteditable="true">https://dynatrace.example.com/dashboard/ORCA</a>
+                        <span class="label">ORCA Tech Dashboard:</span>
+                        <a href="#" class="value link">https://hso67908.apps.dynatrace.com/ui/document/v0/#share=7a45f0f9-79b5-422f-a60f-7235276b9e70</a>
                     </div>
                     <div class="info-row">
-                        <span class="label">Environment ID:</span>
-                        <span class="value editable" contenteditable="true">abc12345</span>
+                        <span class="label">ORCA OPs Dashboard:</span>
+                        <a href="#" class="value link">https://hso67908.apps.dynatrace.com/ui/document/v0/#share=f7e380a6-ff07-4189-84e0-719606763cbf</a>
                     </div>
                     <div class="info-row">
-                        <span class="label">API Token:</span>
-                        <span class="value editable" contenteditable="true">********************************</span>
+                        <span class="label">ORCA Security Dashboard:</span>
+                        <a href="#" class="value link">https://hso67908.apps.dynatrace.com/ui/document/v0/#share=e562d6bb-541c-4448-a643-6a1e4f3b39ac</a>
                     </div>
                     <div class="info-row">
-                        <span class="label">Monitored Services:</span>
-                        <span class="value editable" contenteditable="true">7</span>
+                        <span class="label">ORCA API Performance &amp; Reliability Dashboard:</span>
+                        <a href="#" class="value link">https://hso67908.apps.dynatrace.com/ui/document/v0/#share=7e454525-979e-4301-8f21-1c45ee92298f</a>
                     </div>
                     <div class="info-row">
-                        <span class="label">Key Metrics:</span>
-                        <span class="value editable" contenteditable="true">Response Time, Error Rate, Throughput, Resource Usage</span>
+                        <span class="label">ORCA Database Performance &amp; Health Dashboard:</span>
+                        <a href="#" class="value link">https://hso67908.apps.dynatrace.com/ui/document/v0/#share=9c908770-58ea-44b6-9f2a-a2f7ed37230c</a>
                     </div>
-                    <div class="info-row">
-                        <span class="label">Alert Rules:</span>
-                        <span class="value editable" contenteditable="true">High CPU Usage, Memory Leak, Service Downtime</span>
-                    </div>
+                   
                 </div>
             </section>
         </main>
 
         <footer class="footer">
             <p>&copy; 2026 ORCA Application. All rights reserved.</p>
-            <p class="edit-hint">💡 Tip: Click on any highlighted value to edit it</p>
         </footer>
     </div>
 

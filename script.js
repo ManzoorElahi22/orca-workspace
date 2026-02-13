@@ -3,6 +3,12 @@
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     console.log('ORCA Portfolio Page Loaded');
+
+    // Setup theme toggle
+    setupThemeToggle();
+
+    // Setup copy-url buttons
+    setupCopyUrlButtons();
     
     // Setup editable field features
     setupEditableFields();
@@ -22,6 +28,57 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-save changes
     setupAutoSave();
 });
+
+function setupCopyUrlButtons() {
+    const buttons = document.querySelectorAll('.copy-url[data-url]');
+    if (!buttons.length) return;
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', async () => {
+            const urlToCopy = button.dataset.url;
+            if (!urlToCopy) return;
+
+            try {
+                await navigator.clipboard.writeText(urlToCopy);
+                showNotification('URL copied to clipboard');
+            } catch {
+                const textarea = document.createElement('textarea');
+                textarea.value = urlToCopy;
+                textarea.setAttribute('readonly', '');
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
+                showNotification('URL copied to clipboard');
+            }
+        });
+    });
+}
+
+function setupThemeToggle() {
+    const toggleButton = document.getElementById('theme-toggle');
+    if (!toggleButton) return;
+
+    const THEME_KEY = 'orcaTheme';
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
+
+    applyTheme(initialTheme);
+
+    toggleButton.addEventListener('change', () => {
+        const nextTheme = toggleButton.checked ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        localStorage.setItem(THEME_KEY, nextTheme);
+    });
+
+    function applyTheme(theme) {
+        const isDark = theme === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        toggleButton.checked = isDark;
+    }
+}
 
 // Setup editable fields with visual feedback
 function setupEditableFields() {
@@ -62,7 +119,7 @@ function setupLinkHandlers() {
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.textContent.trim();
-            if (href && href.startsWith('http')) {
+            if (href?.startsWith('http')) {
                 window.open(href, '_blank');
             } else {
                 e.preventDefault();
@@ -178,7 +235,7 @@ function showNotification(message) {
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => {
-            document.body.removeChild(notification);
+            notification.remove();
         }, 300);
     }, 3000);
 }
